@@ -1,4 +1,6 @@
 #!/bin/bash
 
 
-sudo ifconfig
+free -m
+
+date
