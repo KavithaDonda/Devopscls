@@ -1,3 +1,14 @@
-add this is new code
-d1 updated second line
-d2 updated third line
+1 #!/bin/bash
+2
+3 echo "****************"
+4 free -m
+5 echo "****************"
+6
+7
+8 echo "########################### size of root home dir ##################"
+9 du -sh /root
+10
+11
+12 echo "##################################################################"
+13
+14 cut -d: -f1 /etc/passwd |wc -l
