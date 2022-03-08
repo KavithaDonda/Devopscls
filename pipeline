@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git 'https://github.com/manepallivinay/MyApp.git'
+                git 'https://github.com/KavithaDonda/Java-Project.git'
             }
         }
         stage('build') {
