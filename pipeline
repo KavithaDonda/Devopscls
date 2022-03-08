@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+                git 'https://github.com/manepallivinay/MyApp.git'
+            }
+        }
+        stage('build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+         stage('Docker') {
+            steps {
+                sh "docker pull tomcat:9.0"
+            }
+        }
+    }
+}
