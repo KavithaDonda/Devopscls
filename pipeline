@@ -2,19 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('git checkout') {
+        stage('Git checkout') {
             steps {
-                git 'https://github.com/KavithaDonda/Java-Project.git'
+                git 'https://github.com/KavithaDonda/java-helloworld.git'
             }
         }
-        stage('build') {
+        stage('mvn Build') {
             steps {
                 sh "mvn clean package"
             }
         }
-         stage('Docker') {
+        stage('docker deploy') {
             steps {
-                sh "sudo docker pull tomcat:9.0"
+                sh 'docker cp target/*.war e051af1a3608:/usr/local/tomcat/webapps'
             }
         }
     }
