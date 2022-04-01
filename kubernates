@@ -64,14 +64,21 @@
 
 #### Deploying Nginx container on Kubernetes 
 1. Deploying Nginx Container
-    ```sh 
+
+      kubectl create deployment nginx --image=nginx:1.12.0
+       deployment.apps/nginx created
+       or
       kubectl run sample-nginx --image=nginx --replicas=2 --port=80
       kubectl get pods
       kubectl get deployments
-   ```
+   
    
 1. Expose the deployment as service. This will create an ELB in front of those 2 containers and allow us to publicly access them:
    ```sh 
+    kubectl expose deployment nginx --type LoadBalancer --port 80
+    service/nginx exposed
+
+    or
     kubectl expose deployment sample-nginx --port=80 --type=LoadBalancer
     kubectl get services -o wide
     ```
