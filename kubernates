@@ -87,6 +87,12 @@
      kops delete cluster dev.k8s.valaxy.in --yes
     ```
     
+    commands
+    
+    kubectl describe pod podname
+    kubectl get services
+    kubectl delete pod nginx
+    
     Suggestions:
  * list clusters with: kops get cluster
  * edit this cluster with: kops edit cluster dev.k8s.cloud.in
