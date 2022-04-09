@@ -1,6 +1,6 @@
 sh label: '', ''''rm -rf docker
 mkdir docker
-cp /var/lib/jenkins/workspace/pipeline/target/JavaHelloWorldApp.war
+cp /var/lib/jenkins/workspace/pipeline/target/JavaHelloWorldApp.war .
 touch dockerfile
 cat <<EOT>> Dockerfile
 FROM Tomcat
