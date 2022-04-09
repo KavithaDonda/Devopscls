@@ -1,9 +1,9 @@
 sh label: '', ''''rm -rf docker
 mkdir docker
-cp /target/war* . touch dockerfile
+cp /target/*.war . touch dockerfile
 cat <<EOT>> Dockerfile
 FROM Tomcat
-ADD /target.war* /usr/local/tomcat/webapps/
+ADD /target/*.war /usr/local/tomcat/webapps/
 CMD ["catalina.sh", "run"]
 EXPOSE 8080
 EOT
